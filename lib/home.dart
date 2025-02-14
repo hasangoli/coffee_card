@@ -23,21 +23,28 @@ class Home extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(20),
-            margin: EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
+            margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
             decoration: BoxDecoration(
               color: Colors.brown[200],
-              borderRadius: BorderRadius.all(Radius.circular(5)),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: Text("How I like my coffee..."),
           ),
           Container(
             padding: EdgeInsets.all(20),
-            margin: EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
+            margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
             decoration: BoxDecoration(
               color: Colors.brown[100],
-              borderRadius: BorderRadius.all(Radius.circular(5)),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: CoffeePreferences(),
+          ),
+          Expanded(
+            child: Image.asset(
+              'assets/images/coffee_bg.jpg',
+              fit: BoxFit.cover,
+              alignment: Alignment.bottomCenter,
+            ),
           ),
         ],
       ),

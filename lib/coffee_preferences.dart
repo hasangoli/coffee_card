@@ -11,18 +11,28 @@ class CoffeePreferences extends StatelessWidget {
           children: [
             Text("Strength: "),
             Text("3"),
-            SizedBox(
-              width: 50,
+            Image.asset(
+              'assets/images/coffee_bean.png',
+              width: 25,
+              color: Colors.brown[100],
+              colorBlendMode: BlendMode.multiply,
             ),
+            Expanded(child: SizedBox()),
+            Text('+'),
           ],
         ),
         Row(
           children: [
             Text("Sugars: "),
             Text("3"),
-            SizedBox(
-              width: 50,
+            Image.asset(
+              'assets/images/sugar_cube.png',
+              width: 25,
+              color: Colors.brown[100],
+              colorBlendMode: BlendMode.multiply,
             ),
+            Expanded(child: SizedBox()),
+            Text('+'),
           ],
         ),
       ],
