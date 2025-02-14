@@ -1,3 +1,5 @@
+import 'package:coffee_card/styled_body_text.dart';
+import 'package:coffee_card/styled_button.dart';
 import 'package:flutter/material.dart';
 
 class CoffeePreferences extends StatefulWidget {
@@ -29,20 +31,16 @@ class _CoffeePreferencesState extends State<CoffeePreferences> {
       children: [
         Row(
           children: [
-            Text("Strength: "),
-            Text("$strength"),
-            Image.asset(
-              'assets/images/coffee_bean.png',
-              width: 25,
-              color: Colors.brown[100],
-              colorBlendMode: BlendMode.multiply,
-            ),
-            Expanded(child: SizedBox()),
-            FilledButton(
-              style: FilledButton.styleFrom(
-                backgroundColor: Colors.brown,
-                foregroundColor: Colors.white,
+            StyledBodyText("Strength: "),
+            for (int i = 0; i < strength; i++)
+              Image.asset(
+                'assets/images/coffee_bean.png',
+                width: 25,
+                color: Colors.brown[100],
+                colorBlendMode: BlendMode.multiply,
               ),
+            Expanded(child: SizedBox()),
+            StyledButton(
               onPressed: increaseStrength,
               child: Text('+'),
             ),
@@ -50,20 +48,17 @@ class _CoffeePreferencesState extends State<CoffeePreferences> {
         ),
         Row(
           children: [
-            Text("Sugars: "),
-            Text("$sugars"),
-            Image.asset(
-              'assets/images/sugar_cube.png',
-              width: 25,
-              color: Colors.brown[100],
-              colorBlendMode: BlendMode.multiply,
-            ),
-            Expanded(child: SizedBox()),
-            FilledButton(
-              style: FilledButton.styleFrom(
-                backgroundColor: Colors.brown,
-                foregroundColor: Colors.white,
+            StyledBodyText("Sugars: "),
+            if (sugars == 0) Text("No sugars"),
+            for (int i = 0; i < sugars; i++)
+              Image.asset(
+                'assets/images/sugar_cube.png',
+                width: 25,
+                color: Colors.brown[100],
+                colorBlendMode: BlendMode.multiply,
               ),
+            Expanded(child: SizedBox()),
+            StyledButton(
               onPressed: increaseSugar,
               child: Text('+'),
             ),
